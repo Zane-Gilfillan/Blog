@@ -1,3 +1,5 @@
+//sever set up
+
 const express = require('express');
 const routes = require('./controllers');
 const sequelize = require('./config/connection');
@@ -39,6 +41,7 @@ app.set('view engine', 'handlebars');
 
 // turn on routes
 app.use(routes);
+
 
 // turn on connection to db and server
 sequelize.sync({ force: false }).then(() => {
